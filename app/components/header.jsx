@@ -21,17 +21,17 @@ export default function Header() {
               </Link>
             </li>
             <li>
-              <Link href="/Listalunos" className={styles.navLink}>
+              <Link href="/listalunos" className={styles.navLink}>
                 Lista - Alunos
               </Link>
             </li>
             <li>
-              <Link href="/Cadnotas" className={styles.navLink}>
+              <Link href="/cadnotas" className={styles.navLink}>
                 Cadastro - Notas
               </Link>
             </li>
             <li>
-              <Link href="/Listnotas" className={styles.navLink}>
+              <Link href="/listnotas" className={styles.navLink}>
                 Lista - Notas
               </Link>
             </li>

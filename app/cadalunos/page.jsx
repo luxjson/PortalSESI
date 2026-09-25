@@ -1,6 +1,7 @@
-'use-client'
+"use client"
 import { useState } from 'react'
 import Header from '../components/header'
+import styles from './cadalunos.module.css'
 
 export default function CadAlunos() {
     const [nome,setNome] = useState('')
@@ -11,27 +12,39 @@ export default function CadAlunos() {
     return (
         <>
             <Header />
-            <main>
-                <h2>
-                    Cadastro de Alunos
-                </h2>
+            <div className={styles.container}>
+                <main className={styles.main}>
+                    <h2 className={styles.pageTitle}>
+                        Cadastro de Alunos
+                    </h2>
 
-                <form action="">
-                    <label htmlFor="nome">Nome</label>
-                    <input type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+                    <div className={styles.formCard}>
+                        <form className={styles.form} action="">
+                            <div className={styles.fieldGroup}>
+                                <label className={styles.label} htmlFor="nome">Nome</label>
+                                <input className={styles.input} type="text" name="nome" value={nome} onChange={(e) => setNome(e.target.value)} />
+                            </div>
 
-                    <label htmlFor="idade">Idade</label>
-                    <input type="number" name="idade" value={idade} onChange={(e) => setIdade(e.target.value)} />
+                            <div className={styles.fieldGroup}>
+                                <label className={styles.label} htmlFor="idade">Idade</label>
+                                <input className={styles.input} type="number" name="idade" value={idade} onChange={(e) => setIdade(e.target.value)} />
+                            </div>
 
-                    <label htmlFor="serie">Série</label>
-                    <input type="text" name="serie" value={serie} onChange={(e) => setSerie(e.target.value)} />
+                            <div className={styles.fieldGroup}>
+                                <label className={styles.label} htmlFor="serie">Série</label>
+                                <input className={styles.input} type="text" name="serie" value={serie} onChange={(e) => setSerie(e.target.value)} />
+                            </div>
 
-                    <label htmlFor="ra">RA (Registro do Aluno)</label>
-                    <input type="number" name="ra" value={ra} onChange={(e) => setRa(e.target.value)} />
+                            <div className={styles.fieldGroup}>
+                                <label className={styles.label} htmlFor="ra">RA (Registro do Aluno)</label>
+                                <input className={styles.input} type="number" name="ra" value={ra} onChange={(e) => setRa(e.target.value)} />
+                            </div>
 
-                    <button type="submit">Cadastrar</button>
-                </form>
-            </main>
+                            <button className={styles.submitButton} type="submit">Cadastrar</button>
+                        </form>
+                    </div>
+                </main>
+            </div>
         </>
     )
 }
