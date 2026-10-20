@@ -1,66 +1,123 @@
 .header {
-  background-color: #000000;
-  color: #ffffff;
-  border-bottom: 4px solid #e50914; /* Vermelho SESI */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-  width: 100%;
+    background: linear-gradient(
+        135deg,
+        #050816,
+        #0f172a,
+        #1e1b4b
+    );
+
+    padding: 20px 40px;
+    border-bottom: 3px solid #00e5ff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        inset 0 0 20px rgba(0, 229, 255, 0.2);
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem 1.5rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 1rem;
+.logo {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+    text-shadow:
+        0 0 5px #00e5ff,
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        0 0 40px #ff00ff;
+
+    animation: brilhoLogo 3s infinite alternate;
 }
 
-.title {
-  font-size: 1.5rem;
-  font-weight: 800;
-  margin: 0;
-  color: #ffffff;
-  letter-spacing: 0.5px;
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
 }
 
-.highlight {
-  color: #e50914;
+.menu li a {
+    display: block;
+
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+
+    padding: 12px 18px;
+    border-radius: 12px;
+
+    border: 1px solid rgba(0, 229, 255, 0.5);
+
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(6px);
+
+    transition: all 0.35s ease;
 }
 
-.navList {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  gap: 0.5rem;
-  flex-wrap: wrap;
+.menu li a:hover {
+    color: #000;
+
+    background: #00e5ff;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        0 0 40px #00e5ff;
 }
 
-.navLink {
-  color: #ffffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  padding: 0.5rem 0.85rem;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
+.menu li:nth-child(odd) a:hover {
+    background: #ff00ff;
+
+    box-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff,
+        0 0 40px #ff00ff;
 }
 
-.navLink:hover {
-  background-color: #e50914;
-  color: #ffffff;
+@keyframes brilhoLogo {
+    from {
+        text-shadow:
+            0 0 10px #00e5ff,
+            0 0 20px #00e5ff,
+            0 0 30px #00e5ff;
+    }
+
+    to {
+        text-shadow:
+            0 0 15px #ff00ff,
+            0 0 30px #ff00ff,
+            0 0 50px #ff00ff;
+    }
 }
 
-/* Responsividade para telas menores */
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-    text-align: center;
-  }
+/* Responsividade */
 
-  .navList {
-    justify-content: center;
-  }
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo {
+        text-align: center;
+    }
 }

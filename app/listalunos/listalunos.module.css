@@ -1,148 +1,159 @@
-.container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: #f4f5f7;
-  color: #1a1a1a;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
+/* Fundo da página */
 .main {
-  flex: 1;
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
+    min-height: 100vh;
+    padding: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #050816,
+        #0f172a,
+        #1e1b4b
+    );
+
+    color: white;
 }
 
-/* Título da página */
-.pageTitle {
-  font-size: 1.6rem;
-  color: #000000;
-  border-bottom: 3px solid #e50914;
-  padding-bottom: 0.6rem;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+/* Cabeçalho da página */
+.tituloArea {
+    text-align: center;
+    margin-bottom: 40px;
 }
 
-/* --- CARD/WRAPPER DA TABELA --- */
-.tableCard {
-  background-color: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-top: 5px solid #e50914;
-  border-radius: 8px;
-  padding: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
-  overflow-x: auto;
+.tituloArea h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+
+    color: #fff;
+
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff;
 }
 
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9rem;
+.tituloArea p {
+    color: #cbd5e1;
+    font-size: 1.1rem;
 }
 
-.table thead th {
-  background-color: #000000;
-  color: #ffffff;
-  text-transform: uppercase;
-  letter-spacing: 0.4px;
-  font-size: 0.8rem;
-  text-align: center;
-  padding: 0.85rem 0.75rem;
+/* Card da tabela */
+.tabelaContainer {
+    background: rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 229, 255, 0.4);
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.4),
+        0 0 30px rgba(0, 229, 255, 0.2);
 }
 
-.table thead th:first-child {
-  text-align: left;
-  border-top-left-radius: 4px;
+/* Tabela */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.table thead th:last-child {
-  border-top-right-radius: 4px;
+/* Cabeçalho */
+.tabela thead {
+    background: linear-gradient(
+        90deg,
+        #00e5ff,
+        #8b5cf6
+    );
 }
 
-.table tbody td {
-  padding: 0.75rem;
-  text-align: center;
-  border-bottom: 1px solid #eaeaea;
-  color: #1a1a1a;
+.tabela th {
+    padding: 18px;
+    text-align: left;
+
+    color: white;
+
+    font-size: 1rem;
+    letter-spacing: 1px;
 }
 
-.table tbody td:first-child {
-  text-align: left;
-  font-weight: bold;
-  color: #000000;
+/* Linhas */
+.tabela td {
+    padding: 16px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+    color: #e2e8f0;
 }
 
-.table tbody tr:hover {
-  background-color: #fafafa;
+/* Hover linha */
+.tabela tbody tr {
+    transition: all 0.3s ease;
 }
 
-.table tbody tr:last-child td {
-  border-bottom: none;
+.tabela tbody tr:hover {
+    background: rgba(0,229,255,0.08);
+
+    transform: scale(1.01);
+
+    box-shadow: inset 0 0 20px rgba(0,229,255,0.2);
 }
 
-/* Coluna de ações */
-.actionsCell {
-  white-space: nowrap;
+/* Botões */
+.botaoEditar,
+.botaoExcluir {
+    border: none;
+
+    padding: 10px 14px;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-right: 8px;
+
+    transition: all 0.3s ease;
 }
 
-.actions {
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
+.botaoEditar {
+    background: #00e5ff;
+    color: #000;
 }
 
-/* --- BOTÕES --- */
-.editButton,
-.deleteButton {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.8rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  border: none;
-  border-radius: 6px;
-  padding: 0.45rem 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+.botaoEditar:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff;
 }
 
-.editButton {
-  background-color: #000000;
-  color: #ffffff;
+.botaoExcluir {
+    background: #ff00ff;
+    color: white;
 }
 
-.editButton:hover {
-  background-color: #333333;
+.botaoExcluir:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff;
 }
 
-.deleteButton {
-  background-color: #e50914;
-  color: #ffffff;
-}
+/* Responsividade */
+@media (max-width: 768px) {
+    .main {
+        padding: 20px;
+    }
 
-.deleteButton:hover {
-  background-color: #c40410;
-}
+    .tabelaContainer {
+        overflow-x: auto;
+    }
 
-.editButton:active,
-.deleteButton:active {
-  transform: translateY(1px);
-}
-
-/* Ajustes para telas menores */
-@media (max-width: 700px) {
-  .main {
-    padding: 1.5rem 1rem;
-  }
-
-  .table {
-    font-size: 0.8rem;
-  }
-
-  .actions {
-    flex-direction: column;
-  }
+    .tituloArea h2 {
+        font-size: 2rem;
+    }
 }
